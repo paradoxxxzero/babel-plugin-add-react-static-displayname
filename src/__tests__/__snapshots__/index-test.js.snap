@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not set displayName if it's already set does not overide displayName 1`] = `
+"class WithAlreadyDisplayName {
+  static displayName = 'Component';
+
+  render() {
+    return null;
+  }
+
+}"
+`;
+
+exports[`does not set displayName if there's no render method does not overide displayName 1`] = `
+"class NoRender {
+  render_it() {
+    return null;
+  }
+
+}"
+`;
+
+exports[`sets displayName on class with decorators works with decorators 1`] = `
+"var _class;
+
+let WithDecorator = decorator(_class = class WithDecorator {
+  static displayName = \\"WithDecorator\\";
+  static attr = 2;
+
+  render() {
+    return null;
+  }
+
+}) || _class;"
+`;
+
+exports[`sets displayName on class with decorators works with decorators and class-properties 1`] = `
+"var _class, _class2, _temp;
+
+let WithDecorator = decorator(_class = (_temp = _class2 = class WithDecorator {
+  render() {
+    return null;
+  }
+
+}, _class2.displayName = \\"WithDecorator\\", _class2.attr = 2, _temp)) || _class;"
+`;
+
+exports[`sets displayName on class with static members is added along with the other static 1`] = `
+"class WithStatic {
+  static displayName = \\"WithStatic\\";
+  static attr = 2;
+
+  render() {
+    return null;
+  }
+
+}"
+`;
+
+exports[`sets displayName on class with static members is transformed with the other static 1`] = `
+"class WithStatic {
+  render() {
+    return null;
+  }
+
+}
+
+Object.defineProperty(WithStatic, \\"displayName\\", {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  value: \\"WithStatic\\"
+});
+Object.defineProperty(WithStatic, \\"attr\\", {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  value: 2
+});"
+`;
+
+exports[`sets displayName on simple class is transformed with class-properties plugin 1`] = `
+"class Simple {
+  render() {
+    return null;
+  }
+
+}
+
+Object.defineProperty(Simple, \\"displayName\\", {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  value: \\"Simple\\"
+});"
+`;
+
+exports[`sets displayName on simple class sets it 1`] = `
+"class Simple {
+  static displayName = \\"Simple\\";
+
+  render() {
+    return null;
+  }
+
+}"
+`;
