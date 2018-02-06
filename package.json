@@ -1,9 +1,11 @@
 {
   "name": "babel-plugin-add-react-static-displayname",
   "version": "0.0.1",
-  "description": "A babel plugin that adds the static class property displayName to class with a render method.",
-  "main": "lib/index.js",
-  "repository": "https://github.com/paradoxxxzero/babel-plugin-add-react-static-displayname",
+  "description":
+    "A babel plugin that adds the static class property displayName to class with a render method.",
+  "main": "src/index.js",
+  "repository":
+    "https://github.com/paradoxxxzero/babel-plugin-add-react-static-displayname",
   "author": "Florian Mounier",
   "license": "MIT",
   "scripts": {
